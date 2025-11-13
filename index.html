@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Combo Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <i class="fas fa-tv"></i>
+                <h1>IPTV Combo Pro</h1>
+                <p>Genera hasta 1,000,000 combos sin trabas</p>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="filename" placeholder="Nombre del archivo" value="iptv_combos">
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="count" placeholder="Cantidad" min="1" max="1000000" value="1000">
+            </div>
+
+            <div class="options">
+                <label class="select-label">
+                    <select id="suffixType">
+                        <option value="1">+ Año (1900-2050)</option>
+                        <option value="2">+ Número (0-1000)</option>
+                        <option value="3">+ Letra</option>
+                        <option value="4">Letra + Nombre</option>
+                        <option value="5">000-999 + Nombre</option>
+                        <option value="6">Año + Nombre</option>
+                        <option value="7">Año + Nombre + 000-999</option>
+                        <option value="8">000-999 + Nombre + Año</option>
+                        <option value="9">000-999 + Nombre + 000-999</option>
+                        <option value="10">123-123456 + Nombre</option>
+                        <option value="11">Nombre + 123-123456</option>
+                        <option value="12">Nombre + 0000</option>
+                        <option value="13">Mixto</option>
+                        <option value="15" selected>Solo nombre</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="controls">
+                <button id="generateBtn" class="btn-primary">
+                    <i class="fas fa-cogs"></i> Generar
+                </button>
+                <button id="stopBtn" class="btn-danger" style="display:none;">
+                    <i class="fas fa-stop"></i> Detener
+                </button>
+                <button id="saveBtn" class="btn-secondary" disabled>
+                    <i class="fas fa-download"></i> Guardar
+                </button>
+                <button id="copyBtn" class="btn-secondary" disabled>
+                    <i class="fas fa-copy"></i> Copiar
+                </button>
+            </div>
+
+            <div class="progress-container" id="progressContainer" style="display:none;">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <span id="progressText">0%</span>
+                <span id="speed" class="speed">0 combos/s</span>
+            </div>
+
+            <div class="result">
+                <div class="result-header">
+                    <span>Combos generados</span>
+                    <span id="counter" class="counter">0</span>
+                </div>
+                <div id="output" class="output-scroll"></div>
+            </div>
+
+            <div class="footer">
+                <small>Hecho con <i class="fas fa-heart text-red"></i> para <a href="https://render.com">Render.com</a></small>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
